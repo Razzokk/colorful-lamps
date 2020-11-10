@@ -16,7 +16,13 @@ public class ModItems
 		IForgeRegistry<Item> registry = event.getRegistry();
 
 		for (Block block : ForgeRegistries.BLOCKS)
+		{
 			if (block instanceof IItemProvider)
-				registry.register(((IItemProvider) block).createItem().setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
+			{
+				Item item = ((IItemProvider) block).createItem();
+				if (item != IItemProvider.NO_ITEM)
+					registry.register(item.setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
+			}
+		}
 	}
 }

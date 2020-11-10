@@ -2,6 +2,7 @@ package rzk.colorfullamps.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockColored;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -9,6 +10,7 @@ import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemColored;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import rzk.colorfullamps.item.IItemProvider;
 import rzk.colorfullamps.registry.ModBlocks;
@@ -21,6 +23,8 @@ public class BlockColoredRedstoneLamp extends BlockColored implements IItemProvi
 	{
 		super(Material.REDSTONE_LIGHT);
 		setCreativeTab(CreativeTabs.REDSTONE);
+		setSoundType(SoundType.GLASS);
+		setHardness(0.3F);
 		this.powered = powered;
 	}
 
@@ -49,8 +53,17 @@ public class BlockColoredRedstoneLamp extends BlockColored implements IItemProvi
 	}
 
 	@Override
+	public int getLightValue(IBlockState state, IBlockAccess world, BlockPos pos)
+	{
+		return powered ? 15 : 0;
+	}
+
+	@Override
 	public ItemBlock createItem()
 	{
+		if (powered)
+			return NO_ITEM;
+
 		String[] colorNames = new String[EnumDyeColor.values().length];
 
 		for (int i = 0; i < EnumDyeColor.values().length; i++)
