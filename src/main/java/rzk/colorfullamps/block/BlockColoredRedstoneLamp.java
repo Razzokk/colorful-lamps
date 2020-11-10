@@ -6,14 +6,16 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.EnumDyeColor;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemColored;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import rzk.colorfullamps.item.IItemProvider;
 import rzk.colorfullamps.registry.ModBlocks;
+
+import java.util.Random;
 
 public class BlockColoredRedstoneLamp extends BlockColored implements IItemProvider
 {
@@ -33,10 +35,10 @@ public class BlockColoredRedstoneLamp extends BlockColored implements IItemProvi
 		if (!world.isRemote)
 		{
 			if (world.isBlockPowered(pos) && !powered)
-				world.setBlockState(pos, ModBlocks.COLORED_REDSTONE_LAMP_ON.getDefaultState().withProperty(COLOR, state.getValue(COLOR)));
+				world.setBlockState(pos, ModBlocks.LAMP_ON.getDefaultState().withProperty(COLOR, state.getValue(COLOR)));
 
 			else if (!world.isBlockPowered(pos) && powered)
-				world.setBlockState(pos, ModBlocks.COLORED_REDSTONE_LAMP_OFF.getDefaultState().withProperty(COLOR, state.getValue(COLOR)));
+				world.setBlockState(pos, ModBlocks.LAMP_OFF.getDefaultState().withProperty(COLOR, state.getValue(COLOR)));
 		}
 	}
 
@@ -56,6 +58,18 @@ public class BlockColoredRedstoneLamp extends BlockColored implements IItemProvi
 	public int getLightValue(IBlockState state, IBlockAccess world, BlockPos pos)
 	{
 		return powered ? 15 : 0;
+	}
+
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune)
+	{
+		return Item.getItemFromBlock(ModBlocks.LAMP_OFF);
+	}
+
+	@Override
+	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
+	{
+		return new ItemStack(ModBlocks.LAMP_OFF, 1, state.getValue(COLOR).getMetadata());
 	}
 
 	@Override

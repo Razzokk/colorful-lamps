@@ -20,7 +20,7 @@ public class ModRecipes
 		{
 			GameRegistry.addShapedRecipe(new ResourceLocation(ColorfulLamps.MOD_ID, "colored_lamp_" + color.getName()),
 					new ResourceLocation(ColorfulLamps.MOD_ID, "colored_lamp"),
-					new ItemStack(ModBlocks.COLORED_REDSTONE_LAMP_OFF, 8, color.getMetadata()),
+					new ItemStack(ModBlocks.LAMP_OFF, 8, color.getMetadata()),
 					"DDD", "DLD", "DDD", 'D', new ItemStack(Items.DYE, 1, color.getDyeDamage()), 'L', Blocks.REDSTONE_LAMP);
 		}
 	}

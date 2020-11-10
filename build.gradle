@@ -10,7 +10,7 @@ buildscript {
 }
         
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'idea'
+apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = "${mc_version}-${mod_version}"
@@ -51,7 +51,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "examplemod",
+            "Specification-Title": "colorfullamps",
             "Specification-Vendor": "examplemodsareus",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
@@ -74,5 +74,11 @@ publishing {
         maven {
             url "file:///${project.projectDir}/mcmodsrepo"
         }
+    }
+}
+
+sourceSets {
+    main {
+        output.resourcesDir = output.classesDir
     }
 }

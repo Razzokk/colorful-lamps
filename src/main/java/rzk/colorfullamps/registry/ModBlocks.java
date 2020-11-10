@@ -10,8 +10,8 @@ import rzk.colorfullamps.block.BlockColoredRedstoneLamp;
 
 public class ModBlocks
 {
-	public static final Block COLORED_REDSTONE_LAMP_OFF = registerBlock(new BlockColoredRedstoneLamp(false), "colored_lamp_off");
-	public static final Block COLORED_REDSTONE_LAMP_ON = registerBlock(new BlockColoredRedstoneLamp(true), "colored_lamp_on");
+	public static final Block LAMP_OFF = registerBlock(new BlockColoredRedstoneLamp(false), "lamp_off");
+	public static final Block LAMP_ON = registerBlock(new BlockColoredRedstoneLamp(true), "lamp_on");
 
 	public static Block registerBlock(Block block, String name)
 	{
@@ -24,6 +24,6 @@ public class ModBlocks
 	public static void registerBlocks(RegistryEvent.Register<Block> event)
 	{
 		IForgeRegistry<Block> registry = event.getRegistry();
-		registry.registerAll(COLORED_REDSTONE_LAMP_OFF, COLORED_REDSTONE_LAMP_ON);
+		registry.registerAll(LAMP_OFF, LAMP_ON);
 	}
 }

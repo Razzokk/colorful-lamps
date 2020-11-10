@@ -1,0 +1,27 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"uvlock": true
+	},
+	"variants": {
+		"color": {
+			"white":  { "textures": { "all": "colorfullamps:lamp_white_on" } },
+			"orange":  { "textures": { "all": "colorfullamps:lamp_orange_on" } },
+			"magenta":  { "textures": { "all": "colorfullamps:lamp_magenta_on" } },
+			"light_blue":  { "textures": { "all": "colorfullamps:lamp_light_blue_on" } },
+			"yellow":  { "textures": { "all": "colorfullamps:lamp_yellow_on" } },
+			"lime":  { "textures": { "all": "colorfullamps:lamp_lime_on" } },
+			"pink":  { "textures": { "all": "colorfullamps:lamp_pink_on" } },
+			"gray":  { "textures": { "all": "colorfullamps:lamp_gray_on" } },
+			"silver":  { "textures": { "all": "colorfullamps:lamp_silver_on" } },
+			"cyan":  { "textures": { "all": "colorfullamps:lamp_cyan_on" } },
+			"purple":  { "textures": { "all": "colorfullamps:lamp_purple_on" } },
+			"blue":  { "textures": { "all": "colorfullamps:lamp_blue_on" } },
+			"brown":  { "textures": { "all": "colorfullamps:lamp_brown_on" } },
+			"green":  { "textures": { "all": "colorfullamps:lamp_green_on" } },
+			"red":  { "textures": { "all": "colorfullamps:lamp_red_on" } },
+			"black": { "textures": { "all": "colorfullamps:lamp_black_on"  } }
+		}
+	}
+}

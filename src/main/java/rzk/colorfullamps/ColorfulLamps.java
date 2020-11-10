@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
+import rzk.colorfullamps.client.ClientStuff;
 import rzk.colorfullamps.registry.ModBlocks;
 import rzk.colorfullamps.registry.ModItems;
 import rzk.colorfullamps.registry.ModRecipes;
@@ -21,6 +22,7 @@ public class ColorfulLamps
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+        MinecraftForge.EVENT_BUS.register(ClientStuff.class);
         MinecraftForge.EVENT_BUS.register(ModBlocks.class);
         MinecraftForge.EVENT_BUS.register(ModItems.class);
         MinecraftForge.EVENT_BUS.register(ModRecipes.class);

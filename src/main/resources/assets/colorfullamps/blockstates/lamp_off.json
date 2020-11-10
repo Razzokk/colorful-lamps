@@ -1,0 +1,29 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"uvlock": true
+	},
+	"variants": {
+		"normal": [{}],
+		"inventory": [{}],
+		"color": {
+			"white":  { "textures": { "all": "colorfullamps:lamp_white_off" } },
+			"orange":  { "textures": { "all": "colorfullamps:lamp_orange_off" } },
+			"magenta":  { "textures": { "all": "colorfullamps:lamp_magenta_off" } },
+			"light_blue":  { "textures": { "all": "colorfullamps:lamp_light_blue_off" } },
+			"yellow":  { "textures": { "all": "colorfullamps:lamp_yellow_off" } },
+			"lime":  { "textures": { "all": "colorfullamps:lamp_lime_off" } },
+			"pink":  { "textures": { "all": "colorfullamps:lamp_pink_off" } },
+			"gray":  { "textures": { "all": "colorfullamps:lamp_gray_off" } },
+			"silver":  { "textures": { "all": "colorfullamps:lamp_silver_off" } },
+			"cyan":  { "textures": { "all": "colorfullamps:lamp_cyan_off" } },
+			"purple":  { "textures": { "all": "colorfullamps:lamp_purple_off" } },
+			"blue":  { "textures": { "all": "colorfullamps:lamp_blue_off" } },
+			"brown":  { "textures": { "all": "colorfullamps:lamp_brown_off" } },
+			"green":  { "textures": { "all": "colorfullamps:lamp_green_off" } },
+			"red":  { "textures": { "all": "colorfullamps:lamp_red_off" } },
+			"black": { "textures": { "all": "colorfullamps:lamp_black_off"  } }
+		}
+	}
+}
