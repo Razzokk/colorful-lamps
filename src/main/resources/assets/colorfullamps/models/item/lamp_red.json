@@ -1,6 +1,0 @@
-{
-	"parent": "block/cube_all",
-	"textures": {
-		"all": "colorfullamps:lamp_red_off"
-	}
-}

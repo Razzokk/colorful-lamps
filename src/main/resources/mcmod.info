@@ -2,13 +2,13 @@
 {
   "modid": "colorfullamps",
   "name": "Colorful Lamps",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "description": "A mod that adds the Redstone Lamp in all 16 colors",
+  "version": "1.0.0",
+  "mcversion": "1.12.2",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Razzokk"],
+  "credits": "MortalKombatplayer500, for having the idea",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
