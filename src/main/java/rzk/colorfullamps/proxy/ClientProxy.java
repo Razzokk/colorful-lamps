@@ -1,4 +1,4 @@
-package rzk.colorfullamps.client;
+package rzk.colorfullamps.proxy;
 
 import net.minecraft.block.BlockColored;
 import net.minecraft.block.state.IBlockState;
@@ -6,15 +6,14 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
-import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import rzk.colorfullamps.registry.ModBlocks;
 
-public class ClientStuff
+public class ClientProxy implements IProxy
 {
-	@SubscribeEvent
-	public static void registerModels(ModelRegistryEvent event)
+	@Override
+	public void preInit(FMLPreInitializationEvent event)
 	{
 		for (EnumDyeColor color : EnumDyeColor.values())
 			registerBlockVariantMeta(ModBlocks.LAMP_OFF.getDefaultState().withProperty(BlockColored.COLOR, color), color.getMetadata());
